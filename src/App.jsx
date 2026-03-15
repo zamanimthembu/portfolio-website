@@ -11,6 +11,10 @@ const featuredProjects = [
       "Coach-ready insights",
       "Real operational value",
     ],
+    links: [
+      { label: "Live Demo", href: "#", variant: "primary", placeholder: true },
+      { label: "GitHub", href: "#", variant: "secondary", placeholder: true },
+    ],
   },
   {
     title: "Portfolio Platform",
@@ -22,6 +26,14 @@ const featuredProjects = [
       "Strong brand direction",
       "Scalable structure",
     ],
+    links: [
+      {
+        label: "Live Site",
+        href: "https://zamanimthembu.co.za",
+        variant: "primary",
+      },
+      { label: "Source", href: "#", variant: "secondary", placeholder: true },
+    ],
   },
   {
     title: "Cloud Systems Concept",
@@ -29,6 +41,14 @@ const featuredProjects = [
     summary:
       "A placeholder for future work focused on practical cloud architecture, backend reliability, and shipping software that solves real operational problems.",
     highlights: ["System design", "API thinking", "Production mindset"],
+    links: [
+      {
+        label: "Case Study Soon",
+        href: "#",
+        variant: "secondary",
+        placeholder: true,
+      },
+    ],
   },
 ];
 
@@ -76,16 +96,27 @@ const contactLinks = [
     label: "GitHub",
     value: "github.com/zamanimthembu",
     href: "https://github.com/zamanimthembu",
+    note: "Open profile",
+    external: true,
   },
   {
     label: "LinkedIn",
     value: "linkedin.com/in/zamani-mthembu",
     href: "https://www.linkedin.com/in/zamani-mthembu-aa5475132/",
+    note: "Open profile",
+    external: true,
   },
   {
     label: "Email",
     value: "zamanimthembu@yahoo.com",
     href: "mailto:zamanimthembu@yahoo.com",
+    note: "Start email",
+  },
+  {
+    label: "CV / Resume",
+    value: "Download CV",
+    href: "#contact",
+    note: "Placeholder action to connect your PDF later",
   },
 ];
 
@@ -112,6 +143,21 @@ function ProjectCard({ project }) {
           <li key={highlight}>{highlight}</li>
         ))}
       </ul>
+      <div className="project-card__actions">
+        {project.links.map((link) => (
+          <a
+            key={link.label}
+            className={`project-card__link project-card__link--${link.variant}`}
+            href={link.href}
+            target={link.placeholder ? undefined : "_blank"}
+            rel={link.placeholder ? undefined : "noreferrer"}
+            aria-label={link.placeholder ? `${link.label} placeholder` : link.label}
+          >
+            {link.label}
+            {link.placeholder ? " (Placeholder)" : ""}
+          </a>
+        ))}
+      </div>
     </article>
   );
 }
@@ -126,6 +172,22 @@ function ExpertiseCard({ group }) {
         ))}
       </ul>
     </article>
+  );
+}
+
+function ContactCard({ link }) {
+  return (
+    <a
+      className="contact-link"
+      href={link.href}
+      target={link.external ? "_blank" : undefined}
+      rel={link.external ? "noreferrer" : undefined}
+      aria-label={link.label}
+    >
+      <span>{link.label}</span>
+      <strong>{link.value}</strong>
+      <small>{link.note}</small>
+    </a>
   );
 }
 
@@ -153,7 +215,7 @@ function App() {
         <section className="hero-section" id="hero">
           <div className="hero-copy">
             <span className="eyebrow">
-              Software Developer • UCT Information Systems Postgraduate
+              Software Developer | UCT Information Systems Postgraduate
             </span>
             <h1>
               Software products built with engineering clarity and analytical
@@ -171,6 +233,9 @@ function App() {
               </a>
               <a className="button button--secondary" href="#contact">
                 Let&apos;s Connect
+              </a>
+              <a className="button button--tertiary" href="#contact">
+                Download CV
               </a>
             </div>
 
@@ -285,21 +350,12 @@ function App() {
           <SectionIntro
             eyebrow="Contact"
             title="Open to thoughtful conversations about software, products, and opportunities."
-            description="If you’re hiring, collaborating, or want to talk through an interesting problem space, I’d be glad to connect."
+            description="If you&apos;re hiring, collaborating, or want to talk through an interesting problem space, I&apos;d be glad to connect."
           />
 
           <div className="contact-panel">
             {contactLinks.map((link) => (
-              <a
-                key={link.label}
-                className="contact-link"
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>{link.label}</span>
-                <strong>{link.value}</strong>
-              </a>
+              <ContactCard key={link.label} link={link} />
             ))}
           </div>
         </section>
@@ -309,7 +365,7 @@ function App() {
         <p>
           Designed and developed as the first version of zamanimthembu.co.za.
         </p>
-        <span>Zamani Mthembu • Software Developer</span>
+        <span>Zamani Mthembu | Software Developer</span>
       </footer>
     </div>
   );
