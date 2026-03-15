@@ -131,8 +131,9 @@ const contactLinks = [
   {
     label: "CV / Resume",
     value: "Download CV",
-    href: "#contact",
-    note: "Placeholder action to connect your PDF later",
+    href: "/Zamani-Mthembu-CV.pdf",
+    note: "Download PDF resume",
+    download: "Zamani-Mthembu-CV.pdf",
   },
 ];
 
@@ -196,6 +197,7 @@ function ContactCard({ link }) {
     <a
       className="contact-link"
       href={link.href}
+      download={link.download}
       target={link.external ? "_blank" : undefined}
       rel={link.external ? "noreferrer" : undefined}
       aria-label={link.label}
@@ -250,7 +252,12 @@ function App() {
               <a className="button button--secondary" href="#contact">
                 Let&apos;s Connect
               </a>
-              <a className="button button--tertiary" href="#contact">
+              <a
+                className="button button--tertiary"
+                href="/Zamani-Mthembu-CV.pdf"
+                download="Zamani-Mthembu-CV.pdf"
+                aria-label="Download Zamani Mthembu CV PDF"
+              >
                 Download CV
               </a>
             </div>

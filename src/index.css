@@ -334,6 +334,7 @@ p {
 .hero-visual {
   position: relative;
   min-height: 520px;
+  isolation: isolate;
 }
 
 .hero-visual__frame {
@@ -401,6 +402,7 @@ p {
 .hero-visual__panel {
   position: absolute;
   z-index: 1;
+  width: min(250px, calc(100% - 48px));
   max-width: 250px;
   padding: 16px 18px;
   border: 1px solid var(--border);
@@ -425,13 +427,13 @@ p {
 }
 
 .hero-visual__panel--top {
-  top: 22px;
-  left: -18px;
+  top: clamp(18px, 4vw, 24px);
+  left: clamp(16px, 4vw, 24px);
 }
 
 .hero-visual__panel--bottom {
-  right: -18px;
-  bottom: 24px;
+  right: clamp(16px, 4vw, 24px);
+  bottom: clamp(136px, 27%, 168px);
 }
 
 .content-section {
@@ -651,6 +653,10 @@ p {
     min-height: 420px;
   }
 
+  .hero-visual__panel--bottom {
+    bottom: 148px;
+  }
+
   .hero-metrics,
   .expertise-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -696,6 +702,7 @@ p {
 
   .hero-visual__panel {
     position: static;
+    width: 100%;
     max-width: none;
     margin-top: 14px;
   }
