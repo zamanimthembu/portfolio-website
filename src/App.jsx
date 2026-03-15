@@ -12,8 +12,18 @@ const featuredProjects = [
       "Real operational value",
     ],
     links: [
-      { label: "Live Demo", href: "#", variant: "primary", placeholder: true },
-      { label: "GitHub", href: "#", variant: "secondary", placeholder: true },
+      {
+        label: "Live Demo",
+        href: "https://rovers-dashboard.vercel.app",
+        variant: "primary",
+        placeholder: false,
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/zamanimthembu/rovers-dashboard",
+        variant: "secondary",
+        placeholder: false,
+      },
     ],
   },
   {
@@ -31,8 +41,14 @@ const featuredProjects = [
         label: "Live Site",
         href: "https://zamanimthembu.co.za",
         variant: "primary",
+        placeholder: false,
       },
-      { label: "Source", href: "#", variant: "secondary", placeholder: true },
+      {
+        label: "Source",
+        href: "https://github.com/zamanimthembu/portfolio-website",
+        variant: "secondary",
+        placeholder: false,
+      },
     ],
   },
   {
