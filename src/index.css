@@ -704,14 +704,16 @@ p {
     position: static;
     width: 100%;
     max-width: none;
-    margin-top: 14px;
+    margin-top: 20px;
   }
 
-  .hero-visual__identity {
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-    padding: 18px;
+  .hero-visual__panel--bottom {
+    display: none;
+  }
+
+  .hero-visual__frame {
+    position: relative;
+    height: 100%;
   }
 
   .footer {
