@@ -15,7 +15,7 @@ const featuredProjects = [
     links: [
       {
         label: "Private Build in Progress",
-        href: "https://rovers-dashboard.vercel.app/",
+        href: "#projects",
         variant: "primary",
         placeholder: true,
       },
