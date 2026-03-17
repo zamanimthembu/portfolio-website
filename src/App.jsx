@@ -8,17 +8,17 @@ const featuredProjects = [
       "A rugby analytics dashboard currently being refined into a coach-ready product for clearer match review, sharper performance insight, and stronger weekly decision-making.",
     highlights: [
       "Match trends",
-      "Coach-ready insights", "Performance analysis", "Data storytelling"
-  ,
+      "Coach-ready insights",
+      "Performance analysis",
+      "Data storytelling",
     ],
     links: [
       {
         label: "Private Build in Progress",
-        href: "#projects",
+        href: "https://rovers-dashboard.vercel.app/",
         variant: "primary",
         placeholder: true,
       },
-      
     ],
   },
   {
