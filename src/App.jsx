@@ -5,25 +5,20 @@ const featuredProjects = [
     title: "College Rovers Match Dashboard",
     category: "Analytics Product",
     summary:
-      "A rugby analytics dashboard built to turn match data into clearer coaching decisions, sharper performance reviews, and a stronger weekly product workflow.",
+      "A rugby analytics dashboard currently being refined into a coach-ready product for clearer match review, sharper performance insight, and stronger weekly decision-making.",
     highlights: [
       "Match trends",
-      "Coach-ready insights",
-      "Real operational value",
+      "Coach-ready insights", "Performance analysis", "Data storytelling"
+  ,
     ],
     links: [
       {
-        label: "Live Demo",
-        href: "https://rovers-dashboard.vercel.app",
+        label: "Private Build in Progress",
+        href: "#projects",
         variant: "primary",
-        placeholder: false,
+        placeholder: true,
       },
-      {
-        label: "GitHub",
-        href: "https://github.com/zamanimthembu/rovers-dashboard",
-        variant: "secondary",
-        placeholder: false,
-      },
+      
     ],
   },
   {
@@ -130,10 +125,9 @@ const contactLinks = [
   },
   {
     label: "CV / Resume",
-    value: "Download CV",
-    href: "/Zamani-Mthembu-CV.pdf",
-    note: "Download PDF resume",
-    download: "Zamani-Mthembu-CV.pdf",
+    value: "CV available on request",
+    href: "mailto:zamanimthembu@yahoo.com?subject=CV%20Request",
+    note: "Request a copy via email",
   },
 ];
 
@@ -168,10 +162,11 @@ function ProjectCard({ project }) {
             href={link.href}
             target={link.placeholder ? undefined : "_blank"}
             rel={link.placeholder ? undefined : "noreferrer"}
-            aria-label={link.placeholder ? `${link.label} placeholder` : link.label}
+            aria-label={
+              link.placeholder ? `${link.label} coming soon` : link.label
+            }
           >
             {link.label}
-            {link.placeholder ? " (Placeholder)" : ""}
           </a>
         ))}
       </div>
@@ -197,7 +192,6 @@ function ContactCard({ link }) {
     <a
       className="contact-link"
       href={link.href}
-      download={link.download}
       target={link.external ? "_blank" : undefined}
       rel={link.external ? "noreferrer" : undefined}
       aria-label={link.label}
@@ -254,11 +248,10 @@ function App() {
               </a>
               <a
                 className="button button--tertiary"
-                href="/Zamani-Mthembu-CV.pdf"
-                download="Zamani-Mthembu-CV.pdf"
-                aria-label="Download Zamani Mthembu CV PDF"
+                href="mailto:zamanimthembu@yahoo.com?subject=CV%20Request"
+                aria-label="Request Zamani Mthembu CV by email"
               >
-                Download CV
+                Request CV
               </a>
             </div>
 
@@ -373,7 +366,7 @@ function App() {
           <SectionIntro
             eyebrow="Contact"
             title="Open to thoughtful conversations about software, products, and opportunities."
-            description="If you&apos;re hiring, collaborating, or want to talk through an interesting problem space, I&apos;d be glad to connect."
+            description="If you're hiring, collaborating, or want to talk through an interesting problem space, I'd be glad to connect."
           />
 
           <div className="contact-panel">
