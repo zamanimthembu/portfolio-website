@@ -1,16 +1,77 @@
-# React + Vite
+# Zamani Mthembu - Software Engineering Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal software engineering portfolio showcasing backend, full-stack, cloud and product-focused development work.
 
-Currently, two official plugins are available:
+Live site: https://zamanimthembu.co.za
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About
 
-## React Compiler
+This portfolio presents selected software projects and my progression across backend and full-stack engineering. My work focuses on building practical software using technologies including C#, ASP.NET Core, Java, React, SQL, Docker and cloud platforms.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Featured Projects
 
-## Expanding the ESLint configuration
+### LinkAnalytics
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+A backend-focused URL shortening and analytics platform built around REST API design, persistence, redirect handling and click analytics.
+
+Technologies:
+
+- C#
+- ASP.NET Core
+- Entity Framework Core
+- SQL Server
+- REST APIs
+- Docker
+
+Source: https://github.com/zamanimthembu/LinkAnalytics
+
+### College Rovers Performance Dashboard
+
+A full-stack rugby performance platform combining a React frontend, ASP.NET Core API, authentication and structured performance data to support coaching decisions and match analysis.
+
+The platform is currently under active development and is not yet publicly released.
+
+## Portfolio Tech Stack
+
+- React
+- Vite
+- JavaScript
+- HTML / CSS
+- Responsive component design
+- Git / GitHub
+- Vercel
+
+## Local Development
+
+### Clone
+
+```bash
+git clone https://github.com/zamanimthembu/portfolio-website.git
+cd portfolio-website
+```
+
+### Install
+
+```bash
+npm install
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+### Production Build
+
+```bash
+npm run build
+```
+
+## Contact
+
+- Portfolio: https://zamanimthembu.co.za
+- GitHub: https://github.com/zamanimthembu
+- LinkedIn: https://www.linkedin.com/in/zamani-mthembu-aa5475132/
+
+Designed and developed by Zamani Mthembu.
