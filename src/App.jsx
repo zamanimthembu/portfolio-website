@@ -2,20 +2,39 @@ import profileImage from "./assets/zamani-profile.png";
 
 const featuredProjects = [
   {
-    title: "College Rovers Match Dashboard",
-    category: "Analytics Product",
+    title: "LinkAnalytics",
+    category: "Backend Engineering",
     summary:
-      "A rugby analytics dashboard currently being refined into a coach-ready product for clearer match review, sharper performance insight, and stronger weekly decision-making.",
+      "A RESTful link-shortening and analytics platform built to strengthen production-style backend engineering through clean API architecture, persistence, redirect handling and click analytics.",
     highlights: [
-      "Match trends",
-      "Coach-ready insights",
-      "Performance analysis",
-      "Data storytelling",
+      "REST API architecture",
+      "ASP.NET Core",
+      "SQL persistence",
+      "Docker environment",
+    ],
+    links: [
+      {
+        label: "View Source",
+        href: "https://github.com/zamanimthembu/LinkAnalytics",
+        variant: "primary",
+        placeholder: false,
+      },
+    ],
+  },
+  {
+    title: "College Rovers Performance Dashboard",
+    category: "Full-Stack Performance Platform",
+    summary:
+      "A full-stack rugby performance platform combining a React interface, ASP.NET Core API, authentication and structured performance data to support clearer coaching decisions and match analysis.",
+    highlights: [
+      "Full-stack architecture",
+      "REST API integration",
+      "Role-based authentication",
+      "Performance analytics",
     ],
     links: [
       {
         label: "Private Build in Progress",
-        href: "#projects",
         variant: "primary",
         placeholder: true,
       },
@@ -23,13 +42,14 @@ const featuredProjects = [
   },
   {
     title: "Portfolio Platform",
-    category: "Personal Brand System",
+    category: "React / Vite Application",
     summary:
-      "A premium portfolio experience designed to present technical depth, product thinking, and execution quality in a format that works for recruiters and engineers.",
+      "A responsive React and Vite portfolio platform built with reusable component structure, deployment-ready implementation, and iterative product development around a clear professional identity.",
     highlights: [
-      "Responsive UI",
-      "Strong brand direction",
-      "Scalable structure",
+      "React / Vite",
+      "Responsive components",
+      "Deployment workflow",
+      "Iterative product development",
     ],
     links: [
       {
@@ -46,58 +66,43 @@ const featuredProjects = [
       },
     ],
   },
-  {
-    title: "Cloud Systems Concept",
-    category: "Engineering Exploration",
-    summary:
-      "A placeholder for future work focused on practical cloud architecture, backend reliability, and shipping software that solves real operational problems.",
-    highlights: ["System design", "API thinking", "Production mindset"],
-    links: [
-      {
-        label: "Case Study Soon",
-        href: "#",
-        variant: "secondary",
-        placeholder: true,
-      },
-    ],
-  },
 ];
 
 const expertise = [
   {
-    title: "Software Engineering",
+    title: "Backend Engineering",
     items: [
-      "React",
-      "JavaScript",
-      "Frontend architecture",
-      "Reusable UI systems",
+      "C# / ASP.NET Core",
+      "REST API design",
+      "Entity Framework Core",
+      "SQL Server",
     ],
   },
   {
-    title: "Analytics & Dashboards",
+    title: "Java & Programming",
     items: [
-      "Data storytelling",
-      "Performance reporting",
-      "Product metrics",
-      "Insight-driven workflows",
+      "Java",
+      "Object-oriented programming",
+      "Data structures & problem solving",
+      "Spring Boot - current focus",
     ],
   },
   {
-    title: "Systems Thinking",
+    title: "Full-Stack & Cloud",
     items: [
-      "Information systems",
-      "Solution design",
-      "Process improvement",
-      "Practical product strategy",
+      "React / Vite",
+      "Docker",
+      "Azure",
+      "AWS fundamentals",
     ],
   },
   {
-    title: "Professional Strengths",
+    title: "Engineering Practice",
     items: [
-      "Teaching clarity",
-      "Stakeholder communication",
-      "Structured execution",
-      "Continuous learning",
+      "Git / GitHub",
+      "Debugging",
+      "Technical documentation",
+      "Structured problem solving",
     ],
   },
 ];
@@ -155,20 +160,29 @@ function ProjectCard({ project }) {
         ))}
       </ul>
       <div className="project-card__actions">
-        {project.links.map((link) => (
-          <a
-            key={link.label}
-            className={`project-card__link project-card__link--${link.variant}`}
-            href={link.href}
-            target={link.placeholder ? undefined : "_blank"}
-            rel={link.placeholder ? undefined : "noreferrer"}
-            aria-label={
-              link.placeholder ? `${link.label} coming soon` : link.label
-            }
-          >
-            {link.label}
-          </a>
-        ))}
+        {project.links.map((link) =>
+          link.placeholder ? (
+            <span
+              key={link.label}
+              className={`project-card__link project-card__link--${link.variant} project-card__status`}
+              role="status"
+              aria-label={`${link.label} for ${project.title}`}
+            >
+              {link.label}
+            </span>
+          ) : (
+            <a
+              key={link.label}
+              className={`project-card__link project-card__link--${link.variant}`}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={link.label}
+            >
+              {link.label}
+            </a>
+          ),
+        )}
       </div>
     </article>
   );
@@ -227,16 +241,18 @@ function App() {
         <section className="hero-section" id="hero">
           <div className="hero-copy">
             <span className="eyebrow">
-              Software Developer | UCT Information Systems Postgraduate
+              Software Developer | C# · ASP.NET Core · Java · React · SQL
             </span>
             <h1>
-              Software products built with engineering clarity and analytical
-              depth.
+              Building reliable software systems with engineering clarity and
+              product thinking.
             </h1>
             <p className="hero-copy__lede">
-              I&apos;m Zamani Mthembu, a software developer focused on practical
-              product execution, analytics-driven dashboards, and
-              well-structured systems built for real-world use.
+              I&apos;m Zamani Mthembu, a software developer with enterprise IT
+              experience and hands-on full-stack development across C#,
+              ASP.NET Core, Java, React, REST APIs and SQL. I enjoy turning real
+              operational problems into well-structured software that is
+              practical, maintainable and built with purpose.
             </p>
 
             <div className="hero-actions">
@@ -257,16 +273,16 @@ function App() {
 
             <div className="hero-metrics" aria-label="Professional highlights">
               <div>
-                <strong>Product-minded</strong>
-                <span>Engineering with business context</span>
+                <strong>Backend-minded</strong>
+                <span>APIs, data and application logic</span>
               </div>
               <div>
-                <strong>Analytics-driven</strong>
-                <span>Dashboards and performance insight</span>
+                <strong>Product-focused</strong>
+                <span>Software built around real user needs</span>
               </div>
               <div>
                 <strong>Systems-focused</strong>
-                <span>Structured execution that scales</span>
+                <span>Structured problem solving that scales</span>
               </div>
             </div>
           </div>
@@ -280,20 +296,22 @@ function App() {
               <span>Profile</span>
               <strong>Zamani Mthembu</strong>
               <p>
-                Developer with product focus, analytical rigor, and systems
-                thinking.
+                Software developer with product focus, structured engineering,
+                and practical systems thinking.
               </p>
             </div>
             <div className="hero-visual__panel hero-visual__panel--top">
               <span>Current Focus</span>
               <strong>
-                Software engineering, analytics, cloud, and digital products
+                Backend engineering, Java/Spring Boot, cloud and production
+                software
               </strong>
             </div>
             <div className="hero-visual__panel hero-visual__panel--bottom">
               <span>Trajectory</span>
               <strong>
-                High-level software development opportunities with real impact
+                Building depth as a professional software engineer through real
+                products and production-minded engineering
               </strong>
             </div>
           </div>
@@ -307,27 +325,28 @@ function App() {
           />
           <div className="about-grid">
             <article className="surface-card">
-              <h3>What I do</h3>
+              <h3>What I build</h3>
               <p>
-                I build modern software experiences with a strong focus on clean
-                interfaces, meaningful structure, and tools that support real
-                decisions.
+                I build practical backend and full-stack software, from REST
+                APIs and data persistence to responsive interfaces and
+                analytics-driven products.
               </p>
             </article>
             <article className="surface-card">
-              <h3>How I think</h3>
+              <h3>How I engineer</h3>
               <p>
-                I care about more than code quality alone. I think in terms of
-                users, data, systems, constraints, and what it takes to turn an
-                idea into a working product.
+                I approach problems through structure: understanding the
+                requirement, separating responsibilities, designing clear
+                application layers and debugging methodically from symptoms to
+                root cause.
               </p>
             </article>
             <article className="surface-card">
               <h3>Where I&apos;m heading</h3>
               <p>
-                I&apos;m building toward high-level software opportunities where
-                engineering, analysis, and product execution come together in a
-                meaningful way.
+                I&apos;m building deeper professional software engineering
+                experience across Java, Spring Boot, cloud technologies,
+                automated testing and production-scale systems.
               </p>
             </article>
           </div>
@@ -336,8 +355,8 @@ function App() {
         <section className="content-section" id="projects">
           <SectionIntro
             eyebrow="Featured Projects"
-            title="Selected work that reflects execution, product depth, and technical intent."
-            description="These projects are presented as products, not exercises. Each one is framed around decisions, outcomes, and the kind of thinking required to ship work that matters."
+            title="Software built around real problems, clear architecture and practical outcomes."
+            description="Selected work demonstrating backend development, full-stack implementation, product thinking and the engineering decisions behind software that solves real problems."
           />
           <div className="projects-grid">
             {featuredProjects.map((project) => (
@@ -349,8 +368,8 @@ function App() {
         <section className="content-section" id="expertise">
           <SectionIntro
             eyebrow="Skills & Expertise"
-            title="Core areas I bring into software work."
-            description="A focused mix of engineering, analytical thinking, and structured communication that supports both product quality and team effectiveness."
+            title="The engineering stack behind my work."
+            description="A growing software engineering toolkit spanning backend development, Java, full-stack applications, cloud technologies and disciplined technical problem solving."
           />
           <div className="expertise-grid">
             {expertise.map((group) => (
@@ -378,9 +397,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>
-          Designed and developed as the first version of zamanimthembu.co.za.
-        </p>
+        <p>Designed and developed by Zamani Mthembu.</p>
         <span>Zamani Mthembu | Software Developer</span>
       </footer>
     </div>

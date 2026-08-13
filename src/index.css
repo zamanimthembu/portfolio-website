@@ -734,3 +734,12 @@ p {
     transition: none !important;
   }
 }
+
+.project-card__status {
+  cursor: default;
+}
+
+.project-card__status:hover,
+.project-card__status:focus-visible {
+  transform: none;
+}
